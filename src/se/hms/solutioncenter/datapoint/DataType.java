@@ -5,7 +5,7 @@ package se.hms.solutioncenter.datapoint;
  * fashion to enums in Java 1.5+
  *
  * @since 1.0
- * @author HMS Networks Inc. Solution Center
+ * @author HMS Networks, MU Americas Solution Center
  */
 public class DataType {
 
