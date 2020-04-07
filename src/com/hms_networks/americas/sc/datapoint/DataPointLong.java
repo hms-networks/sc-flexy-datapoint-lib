@@ -1,27 +1,27 @@
-package se.hms.solutioncenter.datapoint;
+package com.hms_networks.americas.sc.datapoint;
 
 /**
- * Boolean data point class
+ * Long data point class
  * <p>
- * Class object for a DataPoint with a boolean value
+ * Class object for a DataPoint with a long value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
-public class DataPointBoolean extends DataPoint {
+public class DataPointLong extends DataPoint {
 
   /**
    * Data point value
    */
-  private final boolean value;
+  private final long value;
 
   /**
-   * Constructor for a <code>boolean</code> data point.
+   * Constructor for a <code>long</code> data point.
    *
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointBoolean(boolean value, String time) {
+  public DataPointLong(long value, String time) {
     this.value = value;
     this.timestamp = time;
   }
@@ -31,7 +31,7 @@ public class DataPointBoolean extends DataPoint {
    *
    * @return data point value
    */
-  public boolean getValue() {
+  public long getValue() {
     return value;
   }
 
@@ -43,9 +43,8 @@ public class DataPointBoolean extends DataPoint {
    */
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointBoolean) {
-      returnVal = p.getTimeStamp().equals(timestamp)
-          && ((DataPointBoolean) p).getValue() == value;
+    if (p instanceof DataPointLong) {
+      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointLong) p).getValue() == value;
     }
     return returnVal;
   }
@@ -58,8 +57,8 @@ public class DataPointBoolean extends DataPoint {
    */
   public boolean valueEquals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointBoolean) {
-      returnVal = ((DataPointBoolean) p).getValue() == value;
+    if (p instanceof DataPointLong) {
+      returnVal = ((DataPointLong) p).getValue() == value;
     }
     return returnVal;
   }
@@ -70,7 +69,7 @@ public class DataPointBoolean extends DataPoint {
    * @return data point type
    */
   public DataType getType() {
-    return DataType.BOOLEAN;
+    return DataType.LONG;
   }
 
   /**
@@ -79,6 +78,6 @@ public class DataPointBoolean extends DataPoint {
    * @return data point value as a string
    */
   public String getValueString() {
-    return value ? "1" : "0";
+    return Long.toString(value);
   }
 }

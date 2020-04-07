@@ -1,4 +1,4 @@
-package se.hms.solutioncenter.datapoint;
+package com.hms_networks.americas.sc.datapoint;
 
 /**
  * Class to represent a tag data type in a similar

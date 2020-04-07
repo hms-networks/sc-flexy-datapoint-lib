@@ -1,27 +1,27 @@
-package se.hms.solutioncenter.datapoint;
+package com.hms_networks.americas.sc.datapoint;
 
 /**
- * Long data point class
+ * Double data point class
  * <p>
- * Class object for a DataPoint with a long value
+ * Class object for a DataPoint with a double value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
-public class DataPointLong extends DataPoint {
+public class DataPointDouble extends DataPoint {
 
   /**
    * Data point value
    */
-  private final long value;
+  private final double value;
 
   /**
-   * Constructor for a <code>long</code> data point.
+   * Constructor for a <code>double</code> data point.
    *
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointLong(long value, String time) {
+  public DataPointDouble(double value, String time) {
     this.value = value;
     this.timestamp = time;
   }
@@ -31,7 +31,7 @@ public class DataPointLong extends DataPoint {
    *
    * @return data point value
    */
-  public long getValue() {
+  public double getValue() {
     return value;
   }
 
@@ -43,8 +43,9 @@ public class DataPointLong extends DataPoint {
    */
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointLong) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointLong) p).getValue() == value;
+    if (p instanceof DataPointDouble) {
+      returnVal = p.getTimeStamp().equals(timestamp)
+          && ((DataPointDouble) p).getValue() == value;
     }
     return returnVal;
   }
@@ -57,8 +58,8 @@ public class DataPointLong extends DataPoint {
    */
   public boolean valueEquals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointLong) {
-      returnVal = ((DataPointLong) p).getValue() == value;
+    if (p instanceof DataPointDouble) {
+      returnVal = ((DataPointDouble) p).getValue() == value;
     }
     return returnVal;
   }
@@ -69,7 +70,7 @@ public class DataPointLong extends DataPoint {
    * @return data point type
    */
   public DataType getType() {
-    return DataType.LONG;
+    return DataType.DOUBLE;
   }
 
   /**
@@ -78,6 +79,6 @@ public class DataPointLong extends DataPoint {
    * @return data point value as a string
    */
   public String getValueString() {
-    return Long.toString(value);
+    return ("" + value);
   }
 }

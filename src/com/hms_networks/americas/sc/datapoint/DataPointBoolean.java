@@ -1,27 +1,27 @@
-package se.hms.solutioncenter.datapoint;
+package com.hms_networks.americas.sc.datapoint;
 
 /**
- * String data point class
+ * Boolean data point class
  * <p>
- * Class object for a DataPoint with a string value
+ * Class object for a DataPoint with a boolean value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
-public class DataPointString extends DataPoint {
+public class DataPointBoolean extends DataPoint {
 
   /**
    * Data point value
    */
-  private final String value;
+  private final boolean value;
 
   /**
-   * Constructor for a <code>String</code> data point.
+   * Constructor for a <code>boolean</code> data point.
    *
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointString(String value, String time) {
+  public DataPointBoolean(boolean value, String time) {
     this.value = value;
     this.timestamp = time;
   }
@@ -31,7 +31,7 @@ public class DataPointString extends DataPoint {
    *
    * @return data point value
    */
-  public String getValue() {
+  public boolean getValue() {
     return value;
   }
 
@@ -43,9 +43,9 @@ public class DataPointString extends DataPoint {
    */
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointString) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointString) p).getValue()
-          .equals(value);
+    if (p instanceof DataPointBoolean) {
+      returnVal = p.getTimeStamp().equals(timestamp)
+          && ((DataPointBoolean) p).getValue() == value;
     }
     return returnVal;
   }
@@ -58,8 +58,8 @@ public class DataPointString extends DataPoint {
    */
   public boolean valueEquals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointString) {
-      returnVal = ((DataPointString) p).getValueString().equals(value);
+    if (p instanceof DataPointBoolean) {
+      returnVal = ((DataPointBoolean) p).getValue() == value;
     }
     return returnVal;
   }
@@ -70,7 +70,7 @@ public class DataPointString extends DataPoint {
    * @return data point type
    */
   public DataType getType() {
-    return DataType.STRING;
+    return DataType.BOOLEAN;
   }
 
   /**
@@ -79,6 +79,6 @@ public class DataPointString extends DataPoint {
    * @return data point value as a string
    */
   public String getValueString() {
-    return value;
+    return value ? "1" : "0";
   }
 }
