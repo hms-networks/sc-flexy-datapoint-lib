@@ -1,4 +1,4 @@
-package se.hms.solutioncenter.datapoint;
+package com.hms_networks.americas.sc.datapoint;
 
 /**
  * Abstract data point class. Stores tag value
