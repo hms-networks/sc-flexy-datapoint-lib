@@ -5,7 +5,7 @@ package se.hms.solutioncenter.datapoint;
  * and data timestamp from historical logs.
  *
  * @since 1.0
- * @author HMS Networks Inc. Solution Center
+ * @author HMS Networks, MU Americas Solution Center
  */
 public abstract class DataPoint {
 
