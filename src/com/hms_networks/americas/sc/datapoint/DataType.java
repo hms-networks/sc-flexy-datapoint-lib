@@ -15,9 +15,9 @@ public class DataType {
   private static final byte DATA_TYPE_BOOLEAN = 0;
 
   /**
-   * Byte assigned to represent the double data type.
+   * Byte assigned to represent the float data type.
    */
-  private static final byte DATA_TYPE_DOUBLE = 1;
+  private static final byte DATA_TYPE_FLOAT = 1;
 
   /**
    * Byte assigned to represent the integer data type.
@@ -42,7 +42,7 @@ public class DataType {
   /**
    * Public instance of {@link DataType} representing float data type.
    */
-  public static final DataType DOUBLE = new DataType(DATA_TYPE_DOUBLE);
+  public static final DataType FLOAT = new DataType(DATA_TYPE_FLOAT);
 
   /**
    * Public instance of {@link DataType} representing integer data type.

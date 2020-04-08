@@ -1,19 +1,19 @@
 package com.hms_networks.americas.sc.datapoint;
 
 /**
- * Double data point class
+ * Float data point class
  * <p>
- * Class object for a DataPoint with a double value
+ * Class object for a DataPoint with a float value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
-public class DataPointDouble extends DataPoint {
+public class DataPointFloat extends DataPoint {
 
   /**
    * Data point value
    */
-  private final double value;
+  private final float value;
 
   /**
    * Constructor for a <code>double</code> data point.
@@ -21,7 +21,7 @@ public class DataPointDouble extends DataPoint {
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointDouble(double value, String time) {
+  public DataPointFloat(float value, String time) {
     this.value = value;
     this.timestamp = time;
   }
@@ -43,9 +43,9 @@ public class DataPointDouble extends DataPoint {
    */
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointDouble) {
+    if (p instanceof DataPointFloat) {
       returnVal = p.getTimeStamp().equals(timestamp)
-          && ((DataPointDouble) p).getValue() == value;
+          && ((DataPointFloat) p).getValue() == value;
     }
     return returnVal;
   }
@@ -58,8 +58,8 @@ public class DataPointDouble extends DataPoint {
    */
   public boolean valueEquals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointDouble) {
-      returnVal = ((DataPointDouble) p).getValue() == value;
+    if (p instanceof DataPointFloat) {
+      returnVal = ((DataPointFloat) p).getValue() == value;
     }
     return returnVal;
   }
@@ -70,7 +70,7 @@ public class DataPointDouble extends DataPoint {
    * @return data point type
    */
   public DataType getType() {
-    return DataType.DOUBLE;
+    return DataType.FLOAT;
   }
 
   /**
