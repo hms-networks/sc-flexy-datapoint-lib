@@ -25,9 +25,9 @@ public class DataType {
   private static final byte DATA_TYPE_INTEGER = 2;
 
   /**
-   * Byte assigned to represent the long type.
+   * Byte assigned to represent the DWORD type.
    */
-  private static final byte DATA_TYPE_LONG = 3;
+  private static final byte DATA_TYPE_DWORD = 3;
 
   /**
    * Byte assigned to represent the string data type.
@@ -50,9 +50,9 @@ public class DataType {
   public static final DataType INTEGER = new DataType(DATA_TYPE_INTEGER);
 
   /**
-   * Public instance of {@link DataType} representing long data type.
+   * Public instance of {@link DataType} representing DWORD data type.
    */
-  public static final DataType LONG = new DataType(DATA_TYPE_LONG);
+  public static final DataType DWORD = new DataType(DATA_TYPE_DWORD);
 
   /**
    * Public instance of {@link DataType} representing string data type.

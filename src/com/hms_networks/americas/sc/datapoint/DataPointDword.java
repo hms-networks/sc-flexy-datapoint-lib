@@ -1,14 +1,14 @@
 package com.hms_networks.americas.sc.datapoint;
 
 /**
- * Long data point class
+ * DWORD data point class
  * <p>
- * Class object for a DataPoint with a long value
+ * Class object for a DataPoint with a DWORD value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
-public class DataPointLong extends DataPoint {
+public class DataPointDword extends DataPoint {
 
   /**
    * Data point value
@@ -16,12 +16,12 @@ public class DataPointLong extends DataPoint {
   private final long value;
 
   /**
-   * Constructor for a <code>long</code> data point.
+   * Constructor for a DWORD data point.
    *
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointLong(long value, String time) {
+  public DataPointDword(long value, String time) {
     this.value = value;
     this.timestamp = time;
   }
@@ -43,8 +43,8 @@ public class DataPointLong extends DataPoint {
    */
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointLong) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointLong) p).getValue() == value;
+    if (p instanceof DataPointDword) {
+      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointDword) p).getValue() == value;
     }
     return returnVal;
   }
@@ -57,8 +57,8 @@ public class DataPointLong extends DataPoint {
    */
   public boolean valueEquals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointLong) {
-      returnVal = ((DataPointLong) p).getValue() == value;
+    if (p instanceof DataPointDword) {
+      returnVal = ((DataPointDword) p).getValue() == value;
     }
     return returnVal;
   }
@@ -69,7 +69,7 @@ public class DataPointLong extends DataPoint {
    * @return data point type
    */
   public DataType getType() {
-    return DataType.LONG;
+    return DataType.DWORD;
   }
 
   /**
