@@ -18,10 +18,12 @@ public class DataPointString extends DataPoint {
   /**
    * Constructor for a <code>String</code> data point.
    *
+   * @param tagName data point tag name
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointString(String value, String time) {
+  public DataPointString(String tagName, String value, String time) {
+    this.tagName = tagName;
     this.value = value;
     this.timestamp = time;
   }
@@ -45,7 +47,7 @@ public class DataPointString extends DataPoint {
     boolean returnVal = false;
     if (p instanceof DataPointString) {
       returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointString) p).getValue()
-          .equals(value);
+          .equals(value) && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

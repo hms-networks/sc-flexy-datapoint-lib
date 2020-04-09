@@ -18,10 +18,12 @@ public class DataPointInteger extends DataPoint {
   /**
    * Constructor for a <code>integer</code> data point.
    *
+   * @param tagName data point tag name
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointInteger(int value, String time) {
+  public DataPointInteger(String tagName, int value, String time) {
+    this.tagName = tagName;
     this.value = value;
     this.timestamp = time;
   }
@@ -44,7 +46,8 @@ public class DataPointInteger extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointInteger) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointInteger) p).getValue() == value;
+      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointInteger) p).getValue() == value
+          && p.getTagName().equals(tagName);
     }
     return returnVal;
   }
