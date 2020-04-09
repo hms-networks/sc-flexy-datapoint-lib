@@ -18,10 +18,12 @@ public class DataPointBoolean extends DataPoint {
   /**
    * Constructor for a <code>boolean</code> data point.
    *
+   * @param tagName data point tag name
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointBoolean(boolean value, String time) {
+  public DataPointBoolean(String tagName, boolean value, String time) {
+    this.tagName = tagName;
     this.value = value;
     this.timestamp = time;
   }
@@ -45,7 +47,8 @@ public class DataPointBoolean extends DataPoint {
     boolean returnVal = false;
     if (p instanceof DataPointBoolean) {
       returnVal = p.getTimeStamp().equals(timestamp)
-          && ((DataPointBoolean) p).getValue() == value;
+          && ((DataPointBoolean) p).getValue() == value
+          && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

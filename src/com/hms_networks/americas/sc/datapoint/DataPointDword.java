@@ -18,10 +18,12 @@ public class DataPointDword extends DataPoint {
   /**
    * Constructor for a DWORD data point.
    *
+   * @param tagName data point tag name
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointDword(long value, String time) {
+  public DataPointDword(String tagName, long value, String time) {
+    this.tagName = tagName;
     this.value = value;
     this.timestamp = time;
   }
@@ -44,7 +46,8 @@ public class DataPointDword extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointDword) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointDword) p).getValue() == value;
+      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointDword) p).getValue() == value
+          && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

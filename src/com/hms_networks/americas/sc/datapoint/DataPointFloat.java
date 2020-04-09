@@ -18,10 +18,12 @@ public class DataPointFloat extends DataPoint {
   /**
    * Constructor for a <code>double</code> data point.
    *
+   * @param tagName data point tag name
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointFloat(float value, String time) {
+  public DataPointFloat(String tagName, float value, String time) {
+    this.tagName = tagName;
     this.value = value;
     this.timestamp = time;
   }
@@ -45,7 +47,8 @@ public class DataPointFloat extends DataPoint {
     boolean returnVal = false;
     if (p instanceof DataPointFloat) {
       returnVal = p.getTimeStamp().equals(timestamp)
-          && ((DataPointFloat) p).getValue() == value;
+          && ((DataPointFloat) p).getValue() == value
+          && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

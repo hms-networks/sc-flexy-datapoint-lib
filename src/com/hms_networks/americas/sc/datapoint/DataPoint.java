@@ -10,9 +10,23 @@ package com.hms_networks.americas.sc.datapoint;
 public abstract class DataPoint {
 
   /**
+   * Name of data point tag
+   */
+  protected String tagName;
+
+  /**
    * Timestamp of data point
    */
   protected String timestamp;
+
+  /**
+   * Get the name of the data point tag
+   *
+   * @return name of data point tag
+   */
+  public String getTagName() {
+    return tagName;
+  }
 
   /**
    * Get the string representation of the time stamp.
@@ -24,12 +38,12 @@ public abstract class DataPoint {
   }
 
   /**
-   * Get the timestamp and the value returned as a string.
+   * Get the tag name, timestamp and the value returned as a string.
    *
-   * @return timestamp and value in a string with a space in between
+   * @return tag name, timestamp and value in a string with spaces in between
    */
   public String toString() {
-    return timestamp + " " + getValueString();
+    return tagName + " " + timestamp + " " + getValueString();
   }
 
   /**
