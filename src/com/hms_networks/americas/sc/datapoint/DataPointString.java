@@ -2,17 +2,15 @@ package com.hms_networks.americas.sc.datapoint;
 
 /**
  * String data point class
- * <p>
- * Class object for a DataPoint with a string value
+ *
+ * <p>Class object for a DataPoint with a string value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
 public class DataPointString extends DataPoint {
 
-  /**
-   * Data point value
-   */
+  /** Data point value */
   private final String value;
 
   /**
@@ -46,8 +44,10 @@ public class DataPointString extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointString) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointString) p).getValue()
-          .equals(value) && p.getTagName().equals(tagName);
+      returnVal =
+          p.getTimeStamp().equals(timestamp)
+              && ((DataPointString) p).getValue().equals(value)
+              && p.getTagName().equals(tagName);
     }
     return returnVal;
   }
