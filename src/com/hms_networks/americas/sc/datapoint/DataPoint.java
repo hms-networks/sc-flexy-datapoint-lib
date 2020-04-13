@@ -1,22 +1,17 @@
 package com.hms_networks.americas.sc.datapoint;
 
 /**
- * Abstract data point class. Stores tag value
- * and data timestamp from historical logs.
+ * Abstract data point class. Stores tag value and data timestamp from historical logs.
  *
- * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
+ * @since 1.0
  */
 public abstract class DataPoint {
 
-  /**
-   * Name of data point tag
-   */
+  /** Name of data point tag */
   protected String tagName;
 
-  /**
-   * Timestamp of data point
-   */
+  /** Timestamp of data point */
   protected String timestamp;
 
   /**

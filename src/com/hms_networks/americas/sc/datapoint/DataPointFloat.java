@@ -2,17 +2,15 @@ package com.hms_networks.americas.sc.datapoint;
 
 /**
  * Float data point class
- * <p>
- * Class object for a DataPoint with a float value
+ *
+ * <p>Class object for a DataPoint with a float value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
 public class DataPointFloat extends DataPoint {
 
-  /**
-   * Data point value
-   */
+  /** Data point value */
   private final float value;
 
   /**
@@ -46,9 +44,10 @@ public class DataPointFloat extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointFloat) {
-      returnVal = p.getTimeStamp().equals(timestamp)
-          && ((DataPointFloat) p).getValue() == value
-          && p.getTagName().equals(tagName);
+      returnVal =
+          p.getTimeStamp().equals(timestamp)
+              && ((DataPointFloat) p).getValue() == value
+              && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

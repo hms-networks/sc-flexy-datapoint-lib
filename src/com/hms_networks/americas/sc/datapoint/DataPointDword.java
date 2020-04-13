@@ -2,17 +2,15 @@ package com.hms_networks.americas.sc.datapoint;
 
 /**
  * DWORD data point class
- * <p>
- * Class object for a DataPoint with a DWORD value
+ *
+ * <p>Class object for a DataPoint with a DWORD value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
 public class DataPointDword extends DataPoint {
 
-  /**
-   * Data point value
-   */
+  /** Data point value */
   private final long value;
 
   /**
@@ -46,8 +44,10 @@ public class DataPointDword extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointDword) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointDword) p).getValue() == value
-          && p.getTagName().equals(tagName);
+      returnVal =
+          p.getTimeStamp().equals(timestamp)
+              && ((DataPointDword) p).getValue() == value
+              && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

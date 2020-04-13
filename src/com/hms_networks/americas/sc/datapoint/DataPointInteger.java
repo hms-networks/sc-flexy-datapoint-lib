@@ -2,17 +2,15 @@ package com.hms_networks.americas.sc.datapoint;
 
 /**
  * Integer data point class
- * <p>
- * Class object for a DataPoint with a integer value
+ *
+ * <p>Class object for a DataPoint with a integer value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
 public class DataPointInteger extends DataPoint {
 
-  /**
-   * Data point value
-   */
+  /** Data point value */
   private final int value;
 
   /**
@@ -46,8 +44,10 @@ public class DataPointInteger extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointInteger) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointInteger) p).getValue() == value
-          && p.getTagName().equals(tagName);
+      returnVal =
+          p.getTimeStamp().equals(timestamp)
+              && ((DataPointInteger) p).getValue() == value
+              && p.getTagName().equals(tagName);
     }
     return returnVal;
   }
