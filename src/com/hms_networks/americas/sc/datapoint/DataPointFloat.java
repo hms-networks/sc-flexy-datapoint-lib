@@ -17,11 +17,13 @@ public class DataPointFloat extends DataPoint {
    * Constructor for a <code>double</code> data point.
    *
    * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointFloat(String tagName, float value, String time) {
+  public DataPointFloat(String tagName, int tagId, float value, String time) {
     this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
   }

@@ -17,11 +17,13 @@ public class DataPointDword extends DataPoint {
    * Constructor for a DWORD data point.
    *
    * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointDword(String tagName, long value, String time) {
+  public DataPointDword(String tagName, int tagId, long value, String time) {
     this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
   }

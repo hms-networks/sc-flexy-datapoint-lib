@@ -17,11 +17,13 @@ public class DataPointInteger extends DataPoint {
    * Constructor for a <code>integer</code> data point.
    *
    * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointInteger(String tagName, int value, String time) {
+  public DataPointInteger(String tagName, int tagId, int value, String time) {
     this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
   }

@@ -17,11 +17,13 @@ public class DataPointString extends DataPoint {
    * Constructor for a <code>String</code> data point.
    *
    * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointString(String tagName, String value, String time) {
+  public DataPointString(String tagName, int tagId, String value, String time) {
     this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
   }

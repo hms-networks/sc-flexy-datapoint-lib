@@ -11,6 +11,9 @@ public abstract class DataPoint {
   /** Name of data point tag */
   protected String tagName;
 
+  /** ID of data point tag */
+  protected int tagId;
+
   /** Timestamp of data point */
   protected String timestamp;
 
@@ -21,6 +24,15 @@ public abstract class DataPoint {
    */
   public String getTagName() {
     return tagName;
+  }
+
+  /**
+   * Get the ID of the data point tag
+   *
+   * @return ID of data point tag
+   */
+  public int getTagId() {
+    return tagId;
   }
 
   /**

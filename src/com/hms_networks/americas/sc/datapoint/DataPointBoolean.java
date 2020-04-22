@@ -17,11 +17,13 @@ public class DataPointBoolean extends DataPoint {
    * Constructor for a <code>boolean</code> data point.
    *
    * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointBoolean(String tagName, boolean value, String time) {
+  public DataPointBoolean(String tagName, int tagId, boolean value, String time) {
     this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
   }
