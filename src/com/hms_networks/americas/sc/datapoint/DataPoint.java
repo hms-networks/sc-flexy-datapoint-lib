@@ -17,6 +17,9 @@ public abstract class DataPoint {
   /** Timestamp of data point */
   protected String timestamp;
 
+  /** Quality of data point value */
+  protected DataQuality quality;
+
   /**
    * Get the name of the data point tag
    *
@@ -42,6 +45,15 @@ public abstract class DataPoint {
    */
   public String getTimeStamp() {
     return timestamp;
+  }
+
+  /**
+   * Get the quality of the data point value
+   *
+   * @return quality of data point value
+   */
+  public DataQuality getQuality() {
+    return quality;
   }
 
   /**

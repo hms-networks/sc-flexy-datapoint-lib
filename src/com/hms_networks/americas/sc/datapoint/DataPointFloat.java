@@ -14,7 +14,24 @@ public class DataPointFloat extends DataPoint {
   private final float value;
 
   /**
-   * Constructor for a <code>double</code> data point.
+   * Constructor for a <code>double</code> data point with specified quality.
+   *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
+   * @param value data point value
+   * @param time data point timestamp
+   * @param quality data point quality
+   */
+  public DataPointFloat(String tagName, int tagId, float value, String time, DataQuality quality) {
+    this.tagName = tagName;
+    this.tagId = tagId;
+    this.value = value;
+    this.timestamp = time;
+    this.quality = quality;
+  }
+
+  /**
+   * Constructor for a <code>double</code> data point without specified quality.
    *
    * @param tagName data point tag name
    * @param tagId data point tag ID
@@ -26,6 +43,7 @@ public class DataPointFloat extends DataPoint {
     this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
+    this.quality = DataQuality.GOOD;
   }
 
   /**
