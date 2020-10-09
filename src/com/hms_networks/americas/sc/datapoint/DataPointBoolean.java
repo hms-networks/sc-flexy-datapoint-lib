@@ -14,7 +14,25 @@ public class DataPointBoolean extends DataPoint {
   private final boolean value;
 
   /**
-   * Constructor for a <code>boolean</code> data point.
+   * Constructor for a <code>boolean</code> data point with specified quality.
+   *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
+   * @param value data point value
+   * @param time data point timestamp
+   * @param quality data point quality
+   */
+  public DataPointBoolean(
+      String tagName, int tagId, boolean value, String time, DataQuality quality) {
+    this.tagName = tagName;
+    this.tagId = tagId;
+    this.value = value;
+    this.timestamp = time;
+    this.quality = quality;
+  }
+
+  /**
+   * Constructor for a <code>boolean</code> data point without specified quality.
    *
    * @param tagName data point tag name
    * @param tagId data point tag ID
@@ -26,6 +44,7 @@ public class DataPointBoolean extends DataPoint {
     this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
+    this.quality = DataQuality.GOOD;
   }
 
   /**

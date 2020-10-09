@@ -14,7 +14,24 @@ public class DataPointDword extends DataPoint {
   private final long value;
 
   /**
-   * Constructor for a DWORD data point.
+   * Constructor for a DWORD data point with specified quality.
+   *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
+   * @param value data point value
+   * @param time data point timestamp
+   * @param quality data point quality
+   */
+  public DataPointDword(String tagName, int tagId, long value, String time, DataQuality quality) {
+    this.tagName = tagName;
+    this.tagId = tagId;
+    this.value = value;
+    this.timestamp = time;
+    this.quality = quality;
+  }
+
+  /**
+   * Constructor for a DWORD data point without specified quality.
    *
    * @param tagName data point tag name
    * @param tagId data point tag ID
@@ -26,6 +43,7 @@ public class DataPointDword extends DataPoint {
     this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
+    this.quality = DataQuality.GOOD;
   }
 
   /**

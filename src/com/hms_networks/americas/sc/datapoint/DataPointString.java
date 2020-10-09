@@ -14,7 +14,25 @@ public class DataPointString extends DataPoint {
   private final String value;
 
   /**
-   * Constructor for a <code>String</code> data point.
+   * Constructor for a <code>String</code> data point with specified quality.
+   *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
+   * @param value data point value
+   * @param time data point timestamp
+   * @param quality data point quality
+   */
+  public DataPointString(
+      String tagName, int tagId, String value, String time, DataQuality quality) {
+    this.tagName = tagName;
+    this.tagId = tagId;
+    this.value = value;
+    this.timestamp = time;
+    this.quality = quality;
+  }
+
+  /**
+   * Constructor for a <code>String</code> data point without specified quality.
    *
    * @param tagName data point tag name
    * @param tagId data point tag ID
@@ -26,6 +44,7 @@ public class DataPointString extends DataPoint {
     this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
+    this.quality = DataQuality.GOOD;
   }
 
   /**
