@@ -2,28 +2,48 @@ package com.hms_networks.americas.sc.datapoint;
 
 /**
  * Integer data point class
- * <p>
- * Class object for a DataPoint with a integer value
+ *
+ * <p>Class object for a DataPoint with a integer value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
 public class DataPointInteger extends DataPoint {
 
-  /**
-   * Data point value
-   */
+  /** Data point value */
   private final int value;
 
   /**
-   * Constructor for a <code>integer</code> data point.
+   * Constructor for a <code>integer</code> data point with specified quality.
    *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
+   * @param value data point value
+   * @param time data point timestamp
+   * @param quality data point quality
+   */
+  public DataPointInteger(String tagName, int tagId, int value, String time, DataQuality quality) {
+    this.tagName = tagName;
+    this.tagId = tagId;
+    this.value = value;
+    this.timestamp = time;
+    this.quality = quality;
+  }
+
+  /**
+   * Constructor for a <code>integer</code> data point without specified quality.
+   *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointInteger(int value, String time) {
+  public DataPointInteger(String tagName, int tagId, int value, String time) {
+    this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
+    this.quality = DataQuality.GOOD;
   }
 
   /**
@@ -44,7 +64,10 @@ public class DataPointInteger extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointInteger) {
-      returnVal = p.getTimeStamp().equals(timestamp) && ((DataPointInteger) p).getValue() == value;
+      returnVal =
+          p.getTimeStamp().equals(timestamp)
+              && ((DataPointInteger) p).getValue() == value
+              && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

@@ -2,28 +2,49 @@ package com.hms_networks.americas.sc.datapoint;
 
 /**
  * Boolean data point class
- * <p>
- * Class object for a DataPoint with a boolean value
  *
- * @since 1.0
+ * <p>Class object for a DataPoint with a boolean value
+ *
  * @author HMS Networks, MU Americas Solution Center
+ * @since 1.0
  */
 public class DataPointBoolean extends DataPoint {
 
-  /**
-   * Data point value
-   */
+  /** Data point value */
   private final boolean value;
 
   /**
-   * Constructor for a <code>boolean</code> data point.
+   * Constructor for a <code>boolean</code> data point with specified quality.
    *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
+   * @param value data point value
+   * @param time data point timestamp
+   * @param quality data point quality
+   */
+  public DataPointBoolean(
+      String tagName, int tagId, boolean value, String time, DataQuality quality) {
+    this.tagName = tagName;
+    this.tagId = tagId;
+    this.value = value;
+    this.timestamp = time;
+    this.quality = quality;
+  }
+
+  /**
+   * Constructor for a <code>boolean</code> data point without specified quality.
+   *
+   * @param tagName data point tag name
+   * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointBoolean(boolean value, String time) {
+  public DataPointBoolean(String tagName, int tagId, boolean value, String time) {
+    this.tagName = tagName;
+    this.tagId = tagId;
     this.value = value;
     this.timestamp = time;
+    this.quality = DataQuality.GOOD;
   }
 
   /**
@@ -44,8 +65,10 @@ public class DataPointBoolean extends DataPoint {
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
     if (p instanceof DataPointBoolean) {
-      returnVal = p.getTimeStamp().equals(timestamp)
-          && ((DataPointBoolean) p).getValue() == value;
+      returnVal =
+          p.getTimeStamp().equals(timestamp)
+              && ((DataPointBoolean) p).getValue() == value
+              && p.getTagName().equals(tagName);
     }
     return returnVal;
   }

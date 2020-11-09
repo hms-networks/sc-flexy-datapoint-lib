@@ -1,20 +1,20 @@
 package com.hms_networks.americas.sc.datapoint;
 
 /**
- * String data point class
+ * Float data point class
  *
- * <p>Class object for a DataPoint with a string value
+ * <p>Class object for a DataPoint with a float value
  *
  * @since 1.0
  * @author HMS Networks, MU Americas Solution Center
  */
-public class DataPointString extends DataPoint {
+public class DataPointFloat extends DataPoint {
 
   /** Data point value */
-  private final String value;
+  private final float value;
 
   /**
-   * Constructor for a <code>String</code> data point with specified quality.
+   * Constructor for a <code>double</code> data point with specified quality.
    *
    * @param tagName data point tag name
    * @param tagId data point tag ID
@@ -22,8 +22,7 @@ public class DataPointString extends DataPoint {
    * @param time data point timestamp
    * @param quality data point quality
    */
-  public DataPointString(
-      String tagName, int tagId, String value, String time, DataQuality quality) {
+  public DataPointFloat(String tagName, int tagId, float value, String time, DataQuality quality) {
     this.tagName = tagName;
     this.tagId = tagId;
     this.value = value;
@@ -32,14 +31,14 @@ public class DataPointString extends DataPoint {
   }
 
   /**
-   * Constructor for a <code>String</code> data point without specified quality.
+   * Constructor for a <code>double</code> data point without specified quality.
    *
    * @param tagName data point tag name
    * @param tagId data point tag ID
    * @param value data point value
    * @param time data point timestamp
    */
-  public DataPointString(String tagName, int tagId, String value, String time) {
+  public DataPointFloat(String tagName, int tagId, float value, String time) {
     this.tagName = tagName;
     this.tagId = tagId;
     this.value = value;
@@ -52,7 +51,7 @@ public class DataPointString extends DataPoint {
    *
    * @return data point value
    */
-  public String getValue() {
+  public double getValue() {
     return value;
   }
 
@@ -64,10 +63,10 @@ public class DataPointString extends DataPoint {
    */
   public boolean equals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointString) {
+    if (p instanceof DataPointFloat) {
       returnVal =
           p.getTimeStamp().equals(timestamp)
-              && ((DataPointString) p).getValue().equals(value)
+              && ((DataPointFloat) p).getValue() == value
               && p.getTagName().equals(tagName);
     }
     return returnVal;
@@ -81,8 +80,8 @@ public class DataPointString extends DataPoint {
    */
   public boolean valueEquals(DataPoint p) {
     boolean returnVal = false;
-    if (p instanceof DataPointString) {
-      returnVal = ((DataPointString) p).getValueString().equals(value);
+    if (p instanceof DataPointFloat) {
+      returnVal = ((DataPointFloat) p).getValue() == value;
     }
     return returnVal;
   }
@@ -93,7 +92,7 @@ public class DataPointString extends DataPoint {
    * @return data point type
    */
   public DataType getType() {
-    return DataType.STRING;
+    return DataType.FLOAT;
   }
 
   /**
@@ -102,6 +101,6 @@ public class DataPointString extends DataPoint {
    * @return data point value as a string
    */
   public String getValueString() {
-    return value;
+    return ("" + value);
   }
 }
