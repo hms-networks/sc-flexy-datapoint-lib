@@ -23,6 +23,9 @@ public class DataType {
   /** Byte assigned to represent the string data type. */
   private static final byte DATA_TYPE_STRING = 4;
 
+  /** Byte assigned to represent the integer mapped string data type. */
+  private static final byte DATA_TYPE_INTEGER_MAPPED_STRING = 5;
+
   /** Public instance of {@link DataType} representing boolean data type. */
   public static final DataType BOOLEAN = new DataType(DATA_TYPE_BOOLEAN);
 
@@ -37,6 +40,10 @@ public class DataType {
 
   /** Public instance of {@link DataType} representing string data type. */
   public static final DataType STRING = new DataType(DATA_TYPE_STRING);
+
+  /** Public instance of {@link DataType} representing integer mapped string data type. */
+  public static final DataType INTEGER_MAPPED_STRING =
+      new DataType(DATA_TYPE_INTEGER_MAPPED_STRING);
 
   /** Instance data type. */
   private final byte instanceDataType;
