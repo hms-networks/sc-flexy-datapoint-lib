@@ -52,4 +52,13 @@ public class DataPointIntegerMappedString extends DataPointString {
       String tagName, int tagId, int value, String time, String[] enumMapping) {
     super(tagName, tagId, enumMapping[value], time);
   }
+
+  /**
+   * Get the data point type.
+   *
+   * @return data point type
+   */
+  public DataType getType() {
+    return DataType.INTEGER_MAPPED_STRING;
+  }
 }
